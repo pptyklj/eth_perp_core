@@ -1,0 +1,33 @@
+instId: ETH-USDT-SWAP
+bars: [1m, 5m, 30m]
+
+warmup:
+  "1m": 1000
+  "5m": 500
+  "30m": 300
+
+polling:
+  derivatives_interval_sec: 60
+  heartbeat_interval_sec: 1800
+
+weights:
+  Trend: 0.25
+  Momentum: 0.20
+  Volatility: 0.10
+  LeverageFlow: 0.45
+
+threshold_k: 0.7
+confirm_n: 2
+cooldown_n: 1
+rolling_window_days: 14
+
+notifier:
+  provider: smtp
+  smtp_host: smtp.qq.com
+  smtp_port_ssl: 465
+  use_ssl: true
+  sender_email: "YOUR_QQ@qq.com"
+  sender_auth_code_env: "QQ_SMTP_AUTH"
+  receiver_emails: ["YOUR_QQ@qq.com"]
+  subject_prefix: "[ETH-PERP Signal]"
+  send_on_signal_change: true
