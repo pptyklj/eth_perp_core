@@ -1,0 +1,6 @@
+pandas
+pandas-ta
+pyyaml
+websockets
+requests
+pytest
